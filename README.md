@@ -4,9 +4,11 @@ This repository contains VueJS examples (for demonstration purposes during a pre
 
 # How do I use this?
 
-1. Clone the repository
+1. Clone the repository.
 2. Change to the `./vuejs-examples` directory.
 3. Run `npm install`.
+4. Run `gulp server`.
+5. Open [http://localhost:8080/public/](http://localhost:8080/public/) in a web browser.
 
 # Docs from: gulp-es6-webpack-example
 
