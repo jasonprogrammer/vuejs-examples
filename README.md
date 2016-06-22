@@ -2,6 +2,12 @@
 
 This repository contains VueJS examples (for demonstration purposes during a presentation). There is a [Webpack sample configuration](https://github.com/tiagorg/gulp-es6-webpack-example) included as a base for building ES6 with the samples. 
 
+# How do I use this?
+
+1. Clone the repository
+2. Change to the `./vuejs-examples` directory.
+3. Run `npm install`.
+
 # Docs from: gulp-es6-webpack-example
 
 Sample setup with Gulp, Babel, Mocha and Webpack over ES6, transpiled to ES5 (source maps included).
