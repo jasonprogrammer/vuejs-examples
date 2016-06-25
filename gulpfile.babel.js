@@ -5,6 +5,9 @@ import gutil from 'gulp-util';
 import webpack from 'webpack';
 import webpackConfig from './webpack.config.babel';
 import WebpackDevServer from 'webpack-dev-server';
+import HtmlTemplate from './htmltemplate';
+var path = require('path');
+var util = require('util');
 
 gulp.task('default', ['webpack']);
 
@@ -20,6 +23,13 @@ gulp.task('test', ['babel'], () => {
     .on('error', () => {
       gulp.emit('end');
     });
+});
+
+gulp.task('htmljs', (callback) => {
+    let ht = new HtmlTemplate();
+    let paths = ht.getFilePaths(path.resolve(process.cwd(), './src'));
+    console.log(util.inspect(paths));
+    callback();
 });
 
 gulp.task('watch-test', () => {
