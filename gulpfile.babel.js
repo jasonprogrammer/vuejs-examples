@@ -27,8 +27,7 @@ gulp.task('test', ['babel'], () => {
 
 gulp.task('htmljs', (callback) => {
     let ht = new HtmlTemplate();
-    let paths = ht.getFilePaths(path.resolve(process.cwd(), './src'));
-    console.log(util.inspect(paths));
+    ht.recursiveHtmlToJs(path.resolve(process.cwd(), './src'));
     callback();
 });
 
