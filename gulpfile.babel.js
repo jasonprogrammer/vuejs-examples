@@ -27,8 +27,7 @@ gulp.task('test', ['babel'], () => {
 
 gulp.task('htmljs', (callback) => {
     let ht = new HtmlTemplate();
-    ht.recursiveHtmlToJs(path.resolve(process.cwd(), './src'));
-    callback();
+    ht.recursiveHtmlToJs(path.resolve(process.cwd(), './src'), callback);
 });
 
 gulp.task('watch-test', () => {

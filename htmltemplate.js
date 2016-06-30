@@ -1,11 +1,11 @@
-var Fs = require('fs-extra');
 var Str = require('string');
 var Path = require('path');
 var Readdir = require('recursive-readdir');
 var Bluebird = require('bluebird');
+var Fs = Bluebird.promisifyAll(require('fs-extra'));
 
 export default class HtmlTemplate {
-    recursiveHtmlToJs(basePath) {
+    recursiveHtmlToJs(basePath, onDone) {
         let ignoreFunc = function(file, stats) {
             // `file` is the absolute path to the file, and `stats` is an `fs.Stats`
             // object returned from `fs.lstat()`.
@@ -15,9 +15,10 @@ export default class HtmlTemplate {
         // Ignore files named 'foo.cs' and descendants of directories named test
         Readdir(basePath, [ignoreFunc], function(err, files) {
             console.log(files);
+            let numFilesDone = 0;
             for(let fullPath of files) {
                 console.log(fullPath);
-                Fs.readFile(fullPath, 'utf8', function(err, data) {
+                Fs.readFileAsync(fullPath, 'utf8').then(function(data) {
                     console.log(arguments);
                     let lines = data.split("\n");
 
@@ -37,13 +38,22 @@ export default class HtmlTemplate {
                     let startJs = 'export default (';
                     let endJs = ')';
 
-                    Fs.writeFile(outPath, startJs + escapedLines.join("\n+") + endJs, (err) => {
-                        if(err) {
+                    Fs.writeFileAsync(outPath, startJs + escapedLines.join("\n+") + endJs)
+                        .then(function() {
+                            if(++numFilesDone == files.length) {
+                                onDone();
+                                return;
+                            }
+                        })
+                        .catch((err) => {
                             console.log(err);
                             throw err;
-                        }
                     });
                     console.log(escapedLines);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    throw err;
                 });
             }
         });
