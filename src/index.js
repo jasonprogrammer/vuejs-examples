@@ -1,8 +1,14 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import AppTemplate from './app.tpl';
+import {Item} from './item';
 
-@Component({template: AppTemplate})
+@Component({
+    template: AppTemplate,
+    components: {
+        'item': Item
+    }
+})
 class App {
     // return initial data
     data() {

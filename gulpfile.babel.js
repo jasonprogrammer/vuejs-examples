@@ -31,7 +31,7 @@ gulp.task('htmljs', (callback) => {
 });
 
 gulp.task('watch', () => {
-    return gulp.watch(['src/**', 'test/**'], ['webpack']);
+    gulp.watch(['src/*.tpl.html', '!src/*.tpl.js', 'test/**', 'public/**'], ['webpack']);
 });
 
 gulp.task('webpack', ['babel', 'htmljs', 'test'], function(callback) {
