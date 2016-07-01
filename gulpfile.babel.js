@@ -30,11 +30,11 @@ gulp.task('htmljs', (callback) => {
     ht.recursiveHtmlToJs(path.resolve(process.cwd(), './src'), callback);
 });
 
-gulp.task('watch-test', () => {
-  return gulp.watch(['src/**', 'test/**'], ['test']);
+gulp.task('watch', () => {
+    return gulp.watch(['src/**', 'test/**'], ['webpack']);
 });
 
-gulp.task('webpack', ['test'], function(callback) {
+gulp.task('webpack', ['babel', 'htmljs', 'test'], function(callback) {
   var myConfig = Object.create(webpackConfig);
   myConfig.plugins = [
 		new webpack.optimize.DedupePlugin(),

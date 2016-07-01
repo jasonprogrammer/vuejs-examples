@@ -21,7 +21,7 @@ class App {
 
     // method
     greet() {
-        alert('greeting: ' + this.msg);
+        // alert('greeting: ' + this.msg);
     }
 }
 
