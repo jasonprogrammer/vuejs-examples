@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import AppTemplate from './app.tpl';
 
-@Component({template: '<div id="app">hi there</div>'})
+@Component({template: AppTemplate})
 class App {
     // return initial data
     data() {
@@ -23,13 +24,6 @@ class App {
         alert('greeting: ' + this.msg);
     }
 }
-
-// new Vue({
-//     el: '#app',
-//     data: {
-//         message: 'Hello Vue.js!'
-//     }
-// })
 
 // mount
 new App({
