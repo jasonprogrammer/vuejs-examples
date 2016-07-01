@@ -13,7 +13,8 @@ class App {
     // return initial data
     data() {
         return {
-            msg: 123
+            msg: 123,
+            myItemData: {first: 'jason'}
         };
     }
 

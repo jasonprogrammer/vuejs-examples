@@ -3,7 +3,7 @@ import path from 'path';
 module.exports = {
     entry: {
         preload: './target/main.js',
-        index: './target/index.js'
+        app: './target/app.js'
     },
     output: {
         path: path.join(__dirname, 'dist'),
