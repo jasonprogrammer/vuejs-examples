@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import AppTemplate from './app.tpl';
-import {Item} from './item';
+import {Menu} from './menu';
 
 @Component({
     template: AppTemplate,
     components: {
-        'item': Item
+        'menu': Menu
     }
 })
 class App {
@@ -14,7 +14,11 @@ class App {
     data() {
         return {
             msg: 123,
-            myItemData: {first: 'jason'}
+            menu: {
+                items: [{
+                    title: 'Home'
+                }]
+            }
         };
     }
 
@@ -23,16 +27,8 @@ class App {
     }
 
     ready() {
-        this.greet();
-    }
-
-    // method
-    greet() {
-        // alert('greeting: ' + this.msg);
     }
 }
 
 // mount
-new App({
-    // el: '#app'
-})
+new App({})
