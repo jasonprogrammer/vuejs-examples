@@ -34,5 +34,5 @@ class App {
 
 // mount
 new App({
-    el: '#el'
+    // el: '#app'
 })

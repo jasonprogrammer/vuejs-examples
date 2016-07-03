@@ -2,7 +2,6 @@ import path from 'path';
 
 module.exports = {
     entry: {
-        preload: './target/main.js',
         app: './target/app.js'
     },
     output: {

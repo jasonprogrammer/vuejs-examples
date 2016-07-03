@@ -34,7 +34,7 @@ gulp.task('watch', () => {
     gulp.watch(['src/*.tpl.html', '!src/*.tpl.js', 'test/**', 'public/**'], ['webpack']);
 });
 
-gulp.task('webpack', ['babel', 'htmljs', 'test'], function(callback) {
+gulp.task('webpack', ['babel', 'htmljs'], function(callback) {
   var myConfig = Object.create(webpackConfig);
   myConfig.plugins = [
 		new webpack.optimize.DedupePlugin(),
