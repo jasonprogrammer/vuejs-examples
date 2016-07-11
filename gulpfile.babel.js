@@ -12,9 +12,9 @@ var util = require('util');
 gulp.task('default', ['webpack']);
 
 gulp.task('babel', () => {
-  return gulp.src('src/*.js')
+  return gulp.src('js/entry/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('target'));
+    .pipe(gulp.dest('js/target'));
 });
 
 gulp.task('test', ['babel'], () => {
@@ -27,11 +27,11 @@ gulp.task('test', ['babel'], () => {
 
 gulp.task('htmljs', (callback) => {
     let ht = new HtmlTemplate();
-    ht.recursiveHtmlToJs(path.resolve(process.cwd(), './src'), callback);
+    ht.recursiveHtmlToJs(path.resolve(process.cwd(), './js/src'), callback);
 });
 
 gulp.task('watch', () => {
-    gulp.watch(['src/**', '!src/*.tpl.js', 'public/**'], ['webpack']);
+    gulp.watch(['js/entry/**', 'js/src/**', '!js/src/*.tpl.js', 'public/**'], ['webpack']);
 });
 
 gulp.task('webpack', ['babel', 'htmljs'], function(callback) {

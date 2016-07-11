@@ -2,11 +2,11 @@ import path from 'path';
 
 module.exports = {
     entry: {
-        app: './target/app.js'
+        app: './js/target/app.js'
     },
     output: {
-        path: path.join(__dirname, 'dist'),
-        publicPath: '../dist/',
+        path: path.join(__dirname, 'js/dist'),
+        publicPath: '../js/dist/',
         filename: '[name].bundle.js',
         chunkFilename: '[id].bundle.js'
     }
