@@ -6,7 +6,11 @@
 </head>
 <body>
   <div id="app">
-    {{ person.first }} {{ person.last }}
+    <ul>
+      <li v-for="(person, index) in people">
+        {{ person.first }} {{ person.last }}
+      </li>
+    </ul>
   </div>
 	<script src="../js/dist/app.bundle.js"></script>
 </body>
