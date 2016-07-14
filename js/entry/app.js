@@ -1,5 +1,4 @@
-// import Vue from 'vue';
-var Vue = require('../src/vue-2.0.0-beta.1/dist/vue.common');
+var Vue = require('../src/vue-2.0.0-beta.1/dist/vue');
 
 new Vue({
     el: '#app',
