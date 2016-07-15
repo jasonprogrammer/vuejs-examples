@@ -12,7 +12,7 @@ var util = require('util');
 gulp.task('default', ['webpack']);
 
 gulp.task('babel', () => {
-  return gulp.src('js/entry/*.js')
+    return gulp.src(['js/src/*.js', 'js/src/**/*.js'])
     .pipe(babel())
     .pipe(gulp.dest('js/target'));
 });
@@ -31,7 +31,7 @@ gulp.task('htmljs', (callback) => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch(['js/entry/**', 'js/src/**', '!js/src/*.tpl.js', 'public/**'], ['webpack']);
+    gulp.watch(['js/src/**', '!js/src/*.tpl.js', 'public/**'], ['webpack']);
 });
 
 gulp.task('webpack', ['babel', 'htmljs'], function(callback) {
