@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VueJS Demo</title>
+</head>
+<body>
+  <div id="my-container">
+    <input type="text" @keyup.enter="onSubmit"
+           v-model="firstName"/>
+
+    <button @click="onSubmit">Submit</button>
+    {{myValue}}
+  </div>
+
+  <script src="../vue2/vue.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

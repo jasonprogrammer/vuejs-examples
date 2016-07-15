@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VueJS Demo</title>
+</head>
+<body>
+  <style>
+   [v-cloak] {
+       display: none;
+   }
+  </style>
+  <div id="app" v-cloak>
+    {{ person.first }} {{ person.last }}
+  </div>
+  <script src="../vue2/vue.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VueJS Demo</title>
+</head>
+<body>
+  <style>
+   .number {
+       border: 3px solid green;
+       color: blue;
+       font-size: 3em;
+       margin: 3em;
+   }
+  </style>
+
+  <div id="app">
+    <div v-show="oneIsVisible" class="number">
+      1
+    </div>
+    <div v-if="twoIsRendered" class="number">
+      2
+    </div>
+
+    <input type="button" @click="showOne()" value="Toggle Visibility (One)">
+    <input type="button" @click="showTwo()" value="Toggle rendering (Two)">
+  </div>
+  <script src="../vue2/vue.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
