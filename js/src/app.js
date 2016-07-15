@@ -12,10 +12,11 @@ import {Menu} from './menu';
 class App {
     data() {
         return {
-            msg: 123,
             menu: {
                 items: [{
                     title: 'Home'
+                },{
+                    title: 'FAQ'
                 }]
             }
         };
