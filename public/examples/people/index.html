@@ -5,8 +5,12 @@
   <title>VueJS Demo</title>
 </head>
 <body>
-  <div id="app">
-    {{ person.first }} {{ person.last }}
+  <div id="app" v-cloak>
+    <ul>
+      <li v-for="(person, index) in people">
+        {{ person.first }} {{ person.last }}
+      </li>
+    </ul>
   </div>
   <script src="../vue2/vue.min.js"></script>
   <script src="index.js"></script>

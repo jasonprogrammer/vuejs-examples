@@ -1,9 +1,12 @@
 new Vue({
     el: '#app',
     data: {
-        person: {
-            first: 'Bob',
-            last: 'Smith'
-        }
+        people: [{
+            first: 'Joe',
+            last: 'Satriani'
+        },{
+            first: 'Steve',
+            last: 'Vai'
+        }]
     }
 });
