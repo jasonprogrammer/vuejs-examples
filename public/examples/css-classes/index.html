@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VueJS Demo</title>
+</head>
+<body>
+  <style>
+   .output {
+       font-size: 2em;
+   }
+   .error {
+       color: red;
+   }
+   .success {
+       color: green;
+   }
+  </style>
+
+  <div id="app">
+    <div :class="resultClasses" class="output">The name you entered was: {{ opinion }}</div>
+
+    <label for="name">Name</label>
+    <input id="name" type="text" v-model="name">
+  </div>
+  <script src="../vue2/vue.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
